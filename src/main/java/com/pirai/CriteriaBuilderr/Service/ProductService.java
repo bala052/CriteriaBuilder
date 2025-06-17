@@ -106,7 +106,13 @@ public class ProductService
         TypedQuery<Product> tp= em.createQuery(cq);
         tp.setFirstResult(page*size);
         tp.setMaxResults(size);
+
+        //git purpose
+        System.out.println("hello");
+
+
         return tp.getResultList();
+
     }
     public List<ProductDto> constructor(){
 //        CriteriaBuilder cb=em.getCriteriaBuilder();
