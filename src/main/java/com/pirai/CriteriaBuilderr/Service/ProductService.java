@@ -27,6 +27,9 @@ public class ProductService
         CriteriaQuery<Product> cq=cb.createQuery(Product.class);
         Root<Product> rq= cq.from(Product.class);
         cq.select(rq); //SELECT * FROM Product (Printing for all the products in database)
+
+        //git purpose
+        System.out.println("git test");
         return em.createQuery(cq).getResultList();
     }
     public List<Product> findFilterAll(){
