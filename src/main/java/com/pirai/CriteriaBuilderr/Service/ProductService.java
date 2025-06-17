@@ -79,6 +79,15 @@ public class ProductService
         if(minprice!=null){
             pl.add(cb.gt(rq.get("price"),minprice));
         }
+
+        //Git purpose
+
+        System.out.println(category);
+        System.out.println(name);
+        System.out.println(minprice);
+        System.out.println("git status");
+
+
         cq.where(cb.and(pl.toArray(new Predicate[0])));
         return em.createQuery(cq).getResultList();
     }
