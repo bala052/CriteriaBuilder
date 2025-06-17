@@ -41,6 +41,10 @@ public class ProductService
         pre.add(cb.equal(rq.get("category"),"Bikes"));
         pre.add(cb.like(cb.lower(rq.get("name")),"%p%"));
         cq.where(cb.and(pre.toArray(new Predicate[0])));
+
+        //git purpose
+        System.out.println("Predevelop branch");
+
         return em.createQuery(cq).getResultList();
     }
     public List<Product> filterAndCondition(){
