@@ -22,6 +22,20 @@ public class ProductService
     @Autowired
     private ProductRepo pr;
 
+    @Override
+    public String toString() {
+        System.out.println("k");
+        System.out.println("k");
+        System.out.println("k");
+        System.out.println("k");
+        System.out.println("k");
+        System.out.println("k");
+        System.out.println("k");
+        System.out.println("k");
+        System.out.println("k");
+        return super.toString();
+    }
+
     public List<Product> findAll(){
         CriteriaBuilder cb= em.getCriteriaBuilder();
         CriteriaQuery<Product> cq=cb.createQuery(Product.class);
@@ -30,6 +44,7 @@ public class ProductService
 
         //git purpose
         System.out.println("git test");
+        System.out.println("hello good morning");
         return em.createQuery(cq).getResultList();
     }
     public List<Product> findFilterAll(){
