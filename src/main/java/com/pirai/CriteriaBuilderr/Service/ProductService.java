@@ -41,6 +41,10 @@ public class ProductService
         pre.add(cb.equal(rq.get("category"),"Bikes"));
         pre.add(cb.like(cb.lower(rq.get("name")),"%p%"));
         cq.where(cb.and(pre.toArray(new Predicate[0])));
+
+        //git purpose
+        System.out.println("Predevelop branch");
+
         return em.createQuery(cq).getResultList();
     }
     public List<Product> filterAndCondition(){
@@ -75,6 +79,15 @@ public class ProductService
         if(minprice!=null){
             pl.add(cb.gt(rq.get("price"),minprice));
         }
+
+        //Git purpose
+
+        System.out.println(category);
+        System.out.println(name);
+        System.out.println(minprice);
+        System.out.println("git status");
+
+
         cq.where(cb.and(pl.toArray(new Predicate[0])));
         return em.createQuery(cq).getResultList();
     }
@@ -93,7 +106,14 @@ public class ProductService
         TypedQuery<Product> tp= em.createQuery(cq);
         tp.setFirstResult(page*size);
         tp.setMaxResults(size);
+
+        //git purpose
+        System.out.println("hello");
+        System.out.println("ok");
+
+
         return tp.getResultList();
+
     }
     public List<ProductDto> constructor(){
 //        CriteriaBuilder cb=em.getCriteriaBuilder();
@@ -120,6 +140,8 @@ public class ProductService
         if(categories!=null && !categories.isEmpty()){
             cq.where(rq.get("category").in(categories));
         }
+        System.out.println("hello");
+        System.out.println("ok");
         cq.groupBy(rq.get("category"));
         return em.createQuery(cq).getResultList();
     }
