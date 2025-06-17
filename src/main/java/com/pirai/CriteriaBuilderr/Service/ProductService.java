@@ -27,6 +27,9 @@ public class ProductService
         CriteriaQuery<Product> cq=cb.createQuery(Product.class);
         Root<Product> rq= cq.from(Product.class);
         cq.select(rq); //SELECT * FROM Product (Printing for all the products in database)
+
+        //git purpose
+        System.out.println("git test");
         return em.createQuery(cq).getResultList();
     }
     public List<Product> findFilterAll(){
@@ -38,6 +41,10 @@ public class ProductService
         pre.add(cb.equal(rq.get("category"),"Bikes"));
         pre.add(cb.like(cb.lower(rq.get("name")),"%p%"));
         cq.where(cb.and(pre.toArray(new Predicate[0])));
+
+        //git purpose
+        System.out.println("Predevelop branch");
+
         return em.createQuery(cq).getResultList();
     }
     public List<Product> filterAndCondition(){
