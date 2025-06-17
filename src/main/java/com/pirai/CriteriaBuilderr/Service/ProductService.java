@@ -30,6 +30,7 @@ public class ProductService
 
         //git purpose
         System.out.println("git test");
+        System.out.println("hello good morning");
         return em.createQuery(cq).getResultList();
     }
     public List<Product> findFilterAll(){
