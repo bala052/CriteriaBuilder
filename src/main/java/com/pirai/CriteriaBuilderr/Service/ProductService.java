@@ -109,6 +109,7 @@ public class ProductService
 
         //git purpose
         System.out.println("hello");
+        System.out.println("ok");
 
 
         return tp.getResultList();
