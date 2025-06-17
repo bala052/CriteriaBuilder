@@ -22,6 +22,20 @@ public class ProductService
     @Autowired
     private ProductRepo pr;
 
+    @Override
+    public String toString() {
+        System.out.println("k");
+        System.out.println("k");
+        System.out.println("k");
+        System.out.println("k");
+        System.out.println("k");
+        System.out.println("k");
+        System.out.println("k");
+        System.out.println("k");
+        System.out.println("k");
+        return super.toString();
+    }
+
     public List<Product> findAll(){
         CriteriaBuilder cb= em.getCriteriaBuilder();
         CriteriaQuery<Product> cq=cb.createQuery(Product.class);
