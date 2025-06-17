@@ -140,6 +140,8 @@ public class ProductService
         if(categories!=null && !categories.isEmpty()){
             cq.where(rq.get("category").in(categories));
         }
+        System.out.println("hello");
+        System.out.println("ok");
         cq.groupBy(rq.get("category"));
         return em.createQuery(cq).getResultList();
     }
